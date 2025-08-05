@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <title>Solidão nunca mais</title>
+</head>
+
+<body>
+    <header>
+
+        <!-- <h1>Bem-vindo ao Meu Site</h1> -->
+    </header>
+
+    <nav>
+        <!--<a href="formulario.html">Ir para o Formulário</a>-->
+    </nav>
+
+    <main>
+        <!-- <p>Essa é a página inicial do site.</p> -->
+        <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-3 mb-2 mb-md-0">
+                <a href="index.html" class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <img src="logo2.jpg" alt="Logo" width="120" height="60" class="logo">
+                </a>
+            </div>
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 link-secondary">PAGINA INICIAL</a></li>
+                <li><a href="#" class="nav-link px-2">CADASTRE-SE</a></li>
+                <li><a href="#" class="nav-link px-2">SOBRE NOS</a></li>
+                <li><a href="#" class="nav-link px-2">ARTIGOS</a></li>
+                <li><a href="#" class="nav-link px-2">CONTATO</a></li>
+            </ul>
+            <div class="col-md-3 text-end">
+                <button type="button" class="btn btn-outline-primary me-2">Login</button>
+                <button type="button" class="btn btn-primary">Sign-up</button>
+            </div>
+        </header>
+    </main>
+    <div class="carrossel-container">
+        <div class="carrossel" id="carrossel">
+            <img src="casal1" alt="Imagem 1">
+            <img src="casal2.jpg" alt="Imagem 2">
+            <img src="casal3.jpg" alt="Imagem 3">
+        </div>
+        <div class="botoes">
+            <button onclick="mudarSlide(-1)">&#10094;</button>
+            <button onclick="mudarSlide(1)">&#10095;</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Meu Site</p>
+    </footer>
+</body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+<script>
+    let slideAtual = 0;
+
+    function mudarSlide(direcao) {
+        const carrossel = document.getElementById('carrossel');
+        const totalSlides = 3;
+
+        slideAtual += direcao;
+        if (slideAtual < 0) slideAtual = totalSlides - 1;
+        if (slideAtual >= totalSlides) slideAtual = 0;
+
+        carrossel.style.transform = `translateX(-${slideAtual * 500}px)`;
+    }
+</script>
+
+
+</html>
